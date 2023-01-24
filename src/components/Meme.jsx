@@ -1,9 +1,9 @@
 import React from "react";
 import axios from "axios";
-import Memes from "./Memes";
+import MemeList from "./MemeList";
 import { v4 as uuidv4 } from "uuid";
 
-export default function Meme() {
+export default function Meme(props) {
   // Initial state for the meme being created
   const initState = {
     topText: "",
@@ -75,11 +75,11 @@ export default function Meme() {
     setMeme(initState);
   }
 
-  /*This section maps over the created memes and renders each one in the component Memes. It also passes down 
-   the deleteMeme and editMeme functions, as well as the entire memesArray to the component Memes for use.*/
+  /*This section maps over the created memes and renders each one in the component MemeList. It also passes down 
+   the deleteMeme and editMeme functions, as well as the entire memesArray to the component MemeList for use.*/
   const memes = memesArray.map((meme, index) => {
     return (
-      <Memes
+      <MemeList
         key={index}
         {...meme}
         deleteMeme={deleteMeme}
@@ -108,7 +108,7 @@ export default function Meme() {
 
   // The return statement is where the JSX code is rendered to the DOM
   return (
-    <main>
+    <main className={props.darkMode ? "dark" : ""} >
       <h1 className="hero-description">
         The Fastest Meme Generator on the Planet. Easily add text to memes.
       </h1>
@@ -141,7 +141,7 @@ export default function Meme() {
         <h2 className="meme-text top">{meme.topText}</h2>
         <h2 className="meme-text bottom">{meme.bottomText}</h2>
       </div>
-      {/* This div used to display all of the created memes using the map function and the Memes component */}
+      {/* This div used to display all of the created memes using the map function and the MemeList component */}
       <div className="memes-container">{memes}</div>
     </main>
   );

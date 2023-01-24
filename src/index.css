@@ -1,21 +1,28 @@
 * {
     box-sizing: border-box;
+    margin: 0;
+    padding: 0;
 }
 
 html, body {
     font-family: "Karla", sans-serif;
-    margin: 0;
-    padding: 0;
-    background-color: #2C2F34;
 }
 
-.header {
+nav {
     display: flex;
-    justify-content: space-between;
     align-items: center;
-    height: 65px;
-    background: #121211;
-    padding: 20px;
+    justify-content: space-between;
+    background-color: #FDB813;
+    padding: 30px 25px;
+    height: 70px;
+    border-bottom: 1px solid #121211;
+    z-index: 1;
+    color: #121211;
+}
+
+nav.dark {
+    background-color: #121211;
+    color: #FDB813;
 }
 
 .brand-name {
@@ -27,34 +34,93 @@ html, body {
 .fa-brands {
     margin-left: 15px;
     font-size: 3rem;
-    color: #faed26;
 }
-.header-title {
+.nav-title {
     font-size: 1.3rem;
     margin-right: auto;
     font-style: italic;
-    color: #faed26;
 }
 
-.header-project {
-    font-size: 0.75rem;
-    font-weight: 500;
-    margin-right: 15px;
+.toggler {
+    display: flex;
+    align-items: center;
+}
+
+.toggler p {
+    font-size: 0.625rem;
+    font-weight: 600;
+}
+
+.toggler--slider {
+    width: 25px;
+    height: 13px;
+    background-color: #2B283A;
+    border-radius: 2rem;
+    margin-inline: 7px;
+    cursor: pointer;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    border: 1px solid black;
+    box-sizing: content-box;
+}
+
+nav.dark .toggler--slider {
+    border-color: white;
+    background-color: #F5F5F5;
+}
+
+.toggler--slider--circle {
+    height: 13px;
+    width: 13px;
+    background-color: white;
+    border-radius: 50%;
+}
+
+nav.dark .toggler--slider--circle {
+    background-color: black;
+}
+
+.toggler--light {
+    color: #2B283A;
+}
+
+nav.dark .toggler--light {
+    color: #918E9B;
+}
+
+.toggler--dark {
+    color: #D5D4D8;
+}
+
+nav.dark .toggler-dark {
+    color: #FFFFFF;
+}
+
+nav.dark .toggler--slider {
+    justify-content: flex-end;
 }
 
 main {
-    padding: 36px;
+    color: #2C2F34;
+    background-color: #FFFBDC;
+    padding: 2rem;
+}
+
+main.dark {
+    background-color: #2C2F34;
+    color: #FFFBDC ;
 }
 
 .hero-title {
-    color: #faed26;
+    color: #FDB813;
     font-style: italic;
 }
 
 .hero-description {
     width: 550px;
-    margin-bottom: 3rem;
-    color: #ddddd1;
+    padding-top: 2rem;
+    margin-bottom: 2rem;
     font-style: italic;
 }
 
@@ -69,7 +135,7 @@ main {
 .form-input {
     font-family: "Karla", sans-serif;
     border-radius: 5px;
-    border: 1px solid #faed26;
+    border: 1px solid #FDB813;
     text-indent: 5px;
 }
 
@@ -82,9 +148,9 @@ main {
     font-weight: 700;
     font-family: "Karla", sans-serif;
     border-radius: 5px;
-    border: 2px solid #faed26;
+    border: 2px solid #FDB813;
     background: -webkit-linear-gradient(top,#2C2F34 0,#121211 99%);
-    color: #ddddd1;
+    color: #FDB813;
     cursor: pointer;
     text-align: center;
     transition: all .3s ease-in-out;
@@ -92,8 +158,10 @@ main {
 
 .form-btn:hover, .submit-btn:hover {
     color: #121211;
-    background: #faed26;
+    background: #FDB813;
     font-size: 1.2rem;
+    border: 2px solid #121211;
+
 }
 
 .fa-solid {
@@ -214,12 +282,11 @@ footer {
     text-align: center;
     width: 100%;
     height: 2.5rem;
-  }
-  
-  footer p {
-    color: #ccc;
+    padding-top: 11px;
+    background-color: #FDB813;
   }
 
-  footer span {
-    color: #faed26;
+  footer.dark {
+    background-color: #121211;
+    color:#FDB813;
   }
